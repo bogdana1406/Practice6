@@ -34,7 +34,6 @@ public class Part6 {
         arr = initialize();
     }
 
-    // преобразовываем текст в массив строк
     public final String[] initialize() {
         StringBuilder sb = new StringBuilder();
         Pattern p = Pattern.compile("[A-za-zА-Яа-я]+");
@@ -43,36 +42,37 @@ public class Part6 {
             sb.append(m.group() + " ");
         }
         return sb.toString().split(" ");
-
     }
 
     public void consoleOutput(String str, String filename, String str2,
-                                 String operation) {
-        if (!(str.equals("--input") || str.equals("-i"))) {
+                              String operation) {
+        if (!("--input".equals(str) || "-i".equals(str))) {
             System.err.println("Wrong operation");
-//            return false;
         }
         setFilename(filename);
-        if (!(str2.equals("--task") || str2.equals("-t"))) {
+        if (!("--task".equals(str2) || "-t".equals(str2))) {
             System.err.println("Wrong task");
-//            return false;
         }
-        if (operation.equals("frequency")) {
-            arrInitialize();
-            Part61 part61 = new Part61(arr);
-            part61.output();
-//            return true;
-        } else if (operation.equals("length")) {
-            arrInitialize();
-            Part62 part62 = new Part62(arr);
-            part62.output();
-//            return true;
-        } else if (operation.equals("duplicates")) {
-            arrInitialize();
-            Part63 part63 = new Part63(arr);
-            part63.output();
+        switch (operation) {
+            case ("frequency"):
+                arrInitialize();
+                Part61 part61 = new Part61(arr);
+                part61.output();
+                break;
+            case ("length"):
+                arrInitialize();
+                Part62 part62 = new Part62(arr);
+                part62.output();
+                break;
+            case ("duplicates"):
+                arrInitialize();
+                Part63 part63 = new Part63(arr);
+                part63.output();
+                break;
+            default:
+                System.out.println("Unknown operation");
+                break;
         }
-//        return true;
     }
 
     public static void main(String[] args) {

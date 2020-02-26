@@ -9,14 +9,14 @@ import ua.nure.panchenko.practice6.part6.Part6;
 
 public class Demo {
     public static void main(String[] args) {
-        Part1.main(args);
-        Part2.main(args);
-        Part3.main(args);
-        Part4.main(args);
+//        Part1.main(args);
+//        Part2.main(args);
+//        Part3.main(args);
+//        Part4.main(args);
         Part5.main(args);
-        System.out.println("~~~~~~~~~~~~Part6");
-        Part6.main(new String[] {"--input", "part6.txt", "--task", "frequency"});
-        Part6.main(new String[] {"--input", "part6.txt", "--task", "length"});
-        Part6.main(new String[] {"--input", "part6.txt", "--task", "duplicates"});
+//        System.out.println("~~~~~~~~~~~~Part6");
+//        Part6.main(new String[] {"--input", "part6.txt", "--task", "frequency"});
+//        Part6.main(new String[] {"--input", "part6.txt", "--task", "length"});
+//        Part6.main(new String[] {"--input", "part6.txt", "--task", "duplicates"});
     }
 }

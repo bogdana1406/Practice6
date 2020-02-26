@@ -2,6 +2,7 @@ package ua.nure.panchenko.practice6.part6;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class Part63 {
     private List<Word2> arr = new ArrayList<>();
@@ -39,14 +40,10 @@ public class Part63 {
         }
     }
 
-    private String inverse(String str) {
-        StringBuilder sb = new StringBuilder(str);
-        return sb.reverse().toString().toUpperCase();
-    }
-
     public void output() {
         for (String str: arr2) {
-            System.out.println(inverse(str));
+            StringBuilder sb = new StringBuilder(str);
+            System.out.println(sb.reverse().toString().toUpperCase(new Locale("en")));
         }
     }
 }

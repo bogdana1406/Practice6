@@ -59,17 +59,12 @@ public class Range implements Iterable<Integer>{
 
         @Override
         public boolean hasNext() {
-            if (reverse) {
-                if (getPointer() - 1 >= 0) {
-                    return true;
-                }
-                return false;
-            } else {
-                if (getPointer() + 1 < arr.length) {
-                    return true;
-                }
+            boolean hasNext = false;
+            if ((reverse && (getPointer() - 1 >= 0)) ||
+                    (!reverse && (getPointer() + 1 < arr.length))) {
+                    hasNext = true;
             }
-            return false;
+            return hasNext;
         }
 
         @Override

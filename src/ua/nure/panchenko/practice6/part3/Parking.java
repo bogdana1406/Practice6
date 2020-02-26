@@ -53,7 +53,7 @@ public class Parking {
         } else {
             isArrive = arrivePast(k);
         }
-        if (isArrive == false) {
+        if (!isArrive) {
             isArrive = arriveBefore(k);
         }
         return isArrive;

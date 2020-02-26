@@ -54,20 +54,24 @@ public class Tree<E extends Comparable<E>> {
                 root = current.left;
             }
         } else {
-            Node<E> nodeToReplace = current.right;
-            parent = current;
-            while (nodeToReplace.left != null) {
-                parent = nodeToReplace;
-                nodeToReplace = nodeToReplace.left;
-            }
-            current.element = nodeToReplace.element;
-            if (parent.equals(current)) {
-                parent.right = nodeToReplace.right;
-            } else {
-                parent.left = nodeToReplace.right;
-            }
+            nodeReplace();
         }
         return true;
+    }
+
+    private void nodeReplace() {
+        Node<E> nodeToReplace = current.right;
+        parent = current;
+        while (nodeToReplace.left != null) {
+            parent = nodeToReplace;
+            nodeToReplace = nodeToReplace.left;
+        }
+        current.element = nodeToReplace.element;
+        if (parent.equals(current)) {
+            parent.right = nodeToReplace.right;
+        } else {
+            parent.left = nodeToReplace.right;
+        }
     }
 
     public void add(E[] elements) {
@@ -116,8 +120,7 @@ public class Tree<E extends Comparable<E>> {
                 System.out.print("  ");
             }
             System.out.println("  "+root.element);
-        }
-        else {
+        } else {
             System.out.println(root.element);
         }
         printBinaryTree(root.right, level+1);
